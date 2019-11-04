@@ -36,6 +36,7 @@ def reveal(secret,revealedstring,letter):
         return None
 
 def main():
+    global colors
     word = ""
     hanging = False
     counter = 0
@@ -126,6 +127,8 @@ def main():
             gameover = True
             DISPLAYSURF.fill(GREY)
             draw_screen(counter)
+            counter=0
+            colors=[]
             fontObj = pygame.font.SysFont(font, 32)
             text = fontObj.render(" ".join(word), True, WHITE)
             w,h = text.get_width(), text.get_height()
@@ -141,6 +144,8 @@ def main():
             gameover = True
             DISPLAYSURF.fill(GREY)
             draw_screen(counter)
+            counter= 0
+            colors = []
             fontObj = pygame.font.SysFont(font, 32)
             text = fontObj.render(" ".join(word), True, WHITE)
             w,h = text.get_width(), text.get_height()
